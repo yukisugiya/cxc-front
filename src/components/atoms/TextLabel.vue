@@ -1,16 +1,21 @@
 <template>
-  <p>{{ text }}</p>
+  <p :class='classObject'>{{ text }}</p>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
+<script lang="ts" setup>
+import { computed, defineProps } from 'vue';
 
-export default defineComponent({
-  name: 'TextLabel',
-  props:{
-    text: String
-  }
-});
+const props = defineProps({
+  text: String,
+  type: String,
+})
+
+const classObject = computed(() => ({
+  'c-label-green': props.type == 'green',
+  'c-label-blue': props.type == 'blue',
+  'c-label-red': props.type == 'red',
+  'c-label-purple': props.type == 'purple',
+}))
 </script>
 
 <style scoped>
@@ -26,27 +31,27 @@ export default defineComponent({
     width: fit-content;
     box-sizing: border-box;
   }
-  .label-green{
+  .c-label-green{
     background-color: #1BA664;
     border: #229A64 solid 1px;
     color: #fff;
   }
-  .label-blue{
+  .c-label-blue{
     background-color: #1755A6;
     border: #114993 solid 1px;
     color: #fff;
   }
-  .label-red{
+  .c-label-red{
     background-color: #DB675A;
     border: #CE5B4E solid 1px;
     color: #fff;
   }
-  .label-purple{
+  .c-label-purple{
     background-color: #E3D7FF;
     border: #DCD2EF solid 1px;
     color: #48288B;
   }
-  .label-orange{
+  .c-label-orange{
     background-color: #FFE1BA;
     border: #F2D8B5 solid 1px;
     color: #84571C;
