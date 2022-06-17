@@ -1,9 +1,11 @@
 <template>
 <TextLabel text="入社" type="green"/>
+<Heading2 h2="これはタイトル２です"/>
 </template>
 
 <script lang="ts" setup>
 import TextLabel from './components/atoms/TextLabel.vue';
+import Heading2 from './components/atoms/Heading2.vue';
 </script>
 
 <style>
