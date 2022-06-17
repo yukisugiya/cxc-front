@@ -15,5 +15,6 @@ h1 {
   font-size: 2.9rem;
   letter-spacing: 0.17em;
   font-weight: 500;
+  color: #3B3C3C;
 }
 </style>
