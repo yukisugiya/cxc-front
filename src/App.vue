@@ -1,5 +1,5 @@
 <template>
-<TextLabel text="入社" type="darkgreen"/>
+<TextLabel text="入社" type="green"/>
 <Heading1 h1="これはタイトル１です"/>
 </template>
 
