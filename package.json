@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "csv-parse": "^5.2.0",
     "vue": "^3.0.0",
     "vue-class-component": "^8.0.0-0",
     "vue-router": "^4.0.0-0"
@@ -27,8 +28,9 @@
     "eslint-plugin-vue": "^7.0.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.2",
-    "sass": "^1.52.3",
-    "sass-loader": "^13.0.0",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2",
+    "sass-resources-loader": "^2.2.5",
     "typescript": "~4.1.5"
   },
   "eslintConfig": {

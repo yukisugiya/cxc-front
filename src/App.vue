@@ -1,12 +1,13 @@
 <template>
-<TextLabel text="入社" type="green"/>
+<BigNumber num="2"/>
 </template>
 
 <script lang="ts" setup>
 import TextLabel from './components/atoms/TextLabel.vue';
+import BigNumber from './components/atoms/BigNumber.vue';
 </script>
 
-<style>
+<style lang="scss">
 html {
   font-size: 10px;
   color: #484848;
