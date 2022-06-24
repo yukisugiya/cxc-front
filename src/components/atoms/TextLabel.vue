@@ -9,15 +9,15 @@ const props = defineProps({
   text: { //表示するテキスト
     type: String,
     required: true
-  }
+  },
   type: { //ラベルの色
     type: String,
-    default: 'primary'
+    default: 'lightgray'
   }
 })
 
 const classObject = computed(() => ({
-  'c-label-lightgray': props.type == 'primary',
+  'c-label-lightgray': props.type == 'lightgray',
   'c-label-gray': props.type == 'gray',
   'c-label-darkblue': props.type == 'darkblue',
   'c-label-blue': props.type == 'blue',
@@ -43,12 +43,10 @@ const classObject = computed(() => ({
     height: 3rem;
     display: flex;
     align-items: center;
-    margin: 0 auto;
     padding: 0 1.2rem;
     letter-spacing: 0.84px;
     border-radius: 1.5rem;
     width: fit-content;
-    box-sizing: border-box;
     font-weight: 400;
   }
   .c-label {
