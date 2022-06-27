@@ -1,6 +1,6 @@
 <template>
 <TextLabel text="入社" type="green"/>
-<Heading1 h1="「インターン面接」の回答結果"/>
+<Heading1 headingText="「インターン面接」の回答結果"/>
 </template>
 
 <script lang="ts" setup>
