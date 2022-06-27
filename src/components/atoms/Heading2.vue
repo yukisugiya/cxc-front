@@ -1,20 +1,20 @@
 <template>
-  <h1>{{ h1 }}</h1>
+  <h2>{{ h2 }}</h2>
 </template>
 
 <script lang="ts" setup>
 import { defineProps } from 'vue';
 
 const props = defineProps({
-  h1: String,
+  h2: String,
 })
 </script>
 
 <style scoped>
-h1 {
-  font-size: 2.9rem;
-  color: #3B3C3C;
-  letter-spacing: 1.74px;
+h2 {
+  font-size: 2rem;
   font-weight: 500;
+  letter-spacing:1.2px;
+  color: #484848;
 }
 </style>
