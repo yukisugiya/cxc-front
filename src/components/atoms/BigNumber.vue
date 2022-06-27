@@ -6,14 +6,13 @@
 import { defineProps, computed } from 'vue';
 
 const props = defineProps({
-  //件数の数字
-  num: {
+  num: { //件数の数字
     type: Number,
     required: true
   }
 })
 
-const classObject = computed(() => props.num > 0 ? 'active' : '')//numが0以上の時に色が変わる処理
+const classObject = computed(() => props.num > 0 ? 'active' : '')//numが0以上の時にクラス付与
 
 </script>
 
@@ -30,6 +29,7 @@ em {
   font-weight: 600;
   margin-right: 0.2rem;
   color: #E2E2E2;
+
   &.active{
     color: #3B3C3C;
   }
