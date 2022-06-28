@@ -1,16 +1,19 @@
 <template>
-  <h3>{{ h3 }}</h3>
+  <h3>{{ headingText }}</h3>
 </template>
 
 <script lang="ts" setup>
 import { defineProps } from 'vue';
 
 const props = defineProps({
-  h3: String,
+  headingText: { //表示するテキスト
+		type: String, 
+		required: true
+	}
 })
 </script>
 
-<style scoped>
+<style lang ="scss" scoped>
 h3 {
   font-size: 1.6rem;
   font-weight: 500;
