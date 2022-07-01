@@ -1,5 +1,5 @@
 <template>
-  <p><em :class="classObject">{{ num }}</em>{{ text }}</p>
+  <p><em :class="className">{{ num }}</em>{{ text }}</p>
 </template>
 
 <script lang="ts" setup>
@@ -17,7 +17,7 @@ const props = defineProps({
   }
 })
 //numが0以上の時に色が変わる処理
-const classObject = computed(() => props.num > 0 ? 'active' : '')
+const className = computed(() => props.num > 0 ? 'active' : '')
 
 </script>
 
