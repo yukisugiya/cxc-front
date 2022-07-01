@@ -1,5 +1,5 @@
 <template>
-  <h2><i :class="classObject"></i>{{ headingText }}</h2>
+  <h2><i :class="iconName"></i>{{ headingText }}</h2>
 </template>
 
 <script lang="ts" setup>
@@ -15,9 +15,8 @@ const props = defineProps({
     default: 'search'
   }
 });
-const classObject = computed(() => ({
-  'fas fa-search': props.icon == 'search'
-}))
+
+const iconName = 'fas fa-' + props.icon;
 </script>
 
 <style scoped lang="scss">
