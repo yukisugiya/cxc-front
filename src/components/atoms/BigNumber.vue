@@ -1,5 +1,5 @@
 <template>
-  <p><em :class="classObject">{{ num }}</em>件</p>
+  <p><em :class="classObject">{{ num }}</em>{{ text }}</p>
 </template>
 
 <script lang="ts" setup>
@@ -9,6 +9,10 @@ const props = defineProps({
   //件数の数字
   num: {
     type: Number,
+    required: true
+  },
+  text: {
+    type: String,
     required: true
   }
 })
