@@ -1,6 +1,6 @@
 <template>
   <label>
-    <input type="radio" />
+    <input type="radio" name="name" :checked="checked"/>
     <span></span>
     {{ label }}
   </label>
@@ -14,6 +14,13 @@ const props = defineProps({
   label: {
     type: String,
     required: true,
+  },
+  name: {
+    type: String,
+    required: true,
+  },
+   checked: {
+    type: String,
   },
 });
 </script>
