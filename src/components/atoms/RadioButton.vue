@@ -20,7 +20,7 @@ const props = defineProps({
     required: true,
   },
    checked: {
-    type: String,
+    type: Boolean,
   },
 });
 </script>

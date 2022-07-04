@@ -1,6 +1,6 @@
 <template>
 <RadioButton label="aaaa" name="green"/>
-<RadioButton label="aaaa" name="green" checked/>
+<RadioButton label="aaaa" name="green" :checked="true"/>
 <RadioButton label="aaaa" name="green" />
 </template>
 
