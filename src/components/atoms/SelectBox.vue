@@ -1,7 +1,7 @@
 <template>
-  <label>
+  <label for="aa">
     <i class="fas fa-chevron-down"></i>
-    <select>
+    <select id="aa">
       <option
         v-for="option in options"
         :key="option.name"
@@ -22,7 +22,18 @@ const props = defineProps({
   options: {
     type: Array,
     required: true,
-  },
+    name: {    
+      type: String,
+      required: true
+    },
+    value: {
+    type: String,
+    required: true
+    },
+    hidden: {
+      type: Boolean,
+    }
+  }
 });
 </script>
 
@@ -30,6 +41,7 @@ const props = defineProps({
 label {
   position: relative;
   display: inline-block;
+  background-color: #f8f8f8;
 
   i {
     position: absolute;
@@ -37,10 +49,9 @@ label {
     transform: translateY(-50%);
     font-size: 0.8rem;
     right: 2rem;
+    z-index: 0;
   }
-
   select {
-    background-color: #f8f8f8;
     height: 3.6rem;
     border-radius: 4px;
     padding: 0 4rem 0 2rem;
@@ -48,6 +59,9 @@ label {
     letter-spacing: 0.84px;
     color: #6e6e6e;
     outline: none;
+    position: relative;
+    z-index: 10;
+    background-color: none;
   }
 }
 </style>
