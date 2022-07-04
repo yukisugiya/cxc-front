@@ -49,6 +49,7 @@ button {
       color: #6e6e6e;
       background-color: #fcfcfc;
       border: #c7c7c7 1px solid;
+      font-size: 1.4rem;
 
       &:hover,
       &:active {
