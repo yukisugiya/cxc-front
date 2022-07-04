@@ -1,5 +1,8 @@
 <template>
-  <button :class="className" :type="type">{{ text }}</button>
+  <button :class="className" :type="type">
+  <i :class="iconName"></i>
+  {{ text }}
+  </button>
 </template>
 
 <script lang="ts" setup>
@@ -20,6 +23,10 @@ const props = defineProps({
   type: {
     type: String,
     default: "button",
+  },
+  //ボタンのアイコン
+  icon: {
+    type: String,
   }
 });
 
@@ -28,6 +35,8 @@ const className = computed(() => ({
   "c-button-cta": props.color == "cta",
   "c-button-primary": props.color == "primary",
 }));
+
+const iconName = 'fas fa-' + props.icon;
 </script>
 
 <style lang="scss" scoped>
@@ -36,10 +45,8 @@ button {
   letter-spacing: 0.96px;
   border-radius: 4px;
   line-height: 3.6rem;
-  min-width: 13rem;
   text-align: center;
   box-sizing: border-box;
-  padding: 0 1.6rem;
   font-weight: 500;
   transition: 0.2s;
   cursor: pointer;

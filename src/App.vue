@@ -1,6 +1,6 @@
 <template>
 <TextLabel text="入社" type="green"/>
-<Button text="入社する" color="primary" type="submit"/>
+<Button text="削除" color="default" type="submit" icon="times"/>
 </template>
 
 <script lang="ts" setup>
