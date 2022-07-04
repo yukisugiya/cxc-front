@@ -11,15 +11,15 @@ import { defineProps } from "vue";
 const props = defineProps({
   text: {
     type: String,
-    required: true
+    required: true,
   },
   icon: {
     type: String,
-    default: 'chevron-left'
-  }
+    default: "chevron-left",
+  },
 });
 
-const iconName = 'fas fa-' + props.icon;
+const iconName = "fas fa-" + props.icon;
 </script>
 
 <style lang="scss" scoped>
@@ -43,7 +43,7 @@ button {
     transform: translateY(-50%);
   }
   &:hover {
-    opacity: 0.5;
+    color: #484848;
   }
 }
 </style>
