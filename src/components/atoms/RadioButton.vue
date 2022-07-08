@@ -26,20 +26,21 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
+@import "./src/assets/scss/global";
 label {
-  font-size: 1.6rem;
-  color: #484848;
+  font-size: $large;
+  color: $dark-gray;
   letter-spacing: 0.94px;
-  font-weight: 400;
+  font-weight: $regular;
   position: relative;
   cursor: pointer;
   padding-left: 2rem;
 
   span {
     display: inline-block;
-    border: #e2e2e2 solid 2px;
-    width: 1.5rem;
-    height: 1.5rem;
+    border: $off-white solid 2px;
+    width: 15px;
+    height: 15px;
     border-radius: 50%;
     position: absolute;
     top: 60%;
@@ -48,10 +49,10 @@ label {
 
     &::after {
       content: "";
-      width: 1.1rem;
-      height: 1.1rem;
+      width: 11px;
+      height: 11px;
       border-radius: 50%;
-      background-color: #d5523c;
+      background-color: $orange;
       position: absolute;
       opacity: 0;
       top: 50%;
