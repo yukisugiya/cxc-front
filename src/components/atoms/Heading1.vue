@@ -14,10 +14,11 @@ const props = defineProps({
 </script>
 
 <style scoped lang="scss">
+@import "./src/assets/scss/global";
 h1 {
   font-size: 2.9rem;
-  color: #3B3C3C;
+  color: $navy;
   letter-spacing: 1.74px;
-  font-weight: 500;
+  font-weight: $medium;
 }
 </style>
