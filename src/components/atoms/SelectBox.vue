@@ -1,7 +1,7 @@
 <template>
-  <label for="aa">
+  <label>
     <i class="fas fa-chevron-down"></i>
-    <select id="aa">
+    <select>
       <option
         v-for="option in options"
         :key="option.name"
@@ -15,14 +15,14 @@
 </template>
 
 <script lang="ts" setup>
-import { defineProps } from "vue";
+import { defineProps, computed } from "vue";
 
 const props = defineProps({
   //セレクトボックスのオプション
   options: {
     type: Array,
     required: true,
-    name: {    
+    name: {
       type: String,
       required: true
     },
@@ -38,10 +38,12 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
+@import "./src/assets/scss/global";
+
 label {
   position: relative;
   display: inline-block;
-  background-color: #f8f8f8;
+  background-color: $light-gray;
 
   i {
     position: absolute;
@@ -55,10 +57,9 @@ label {
     height: 3.6rem;
     border-radius: 4px;
     padding: 0 4rem 0 2rem;
-    font-size: 1.4rem;
+    font-size: $default;
     letter-spacing: 0.84px;
-    color: #6e6e6e;
-    outline: none;
+    color: $gray;
     position: relative;
     z-index: 10;
     background-color: none;
