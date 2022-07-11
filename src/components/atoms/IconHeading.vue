@@ -24,7 +24,7 @@ const iconName = computed(() => "fas fa-" + props.icon);
 @import "./src/assets/scss/global";
 h2 {
   font-size: $x-large;
-  $gray: #6e6e6e;
+  color: $gray;
   letter-spacing: 1.2px;
   font-weight: $medium;
 
