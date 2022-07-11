@@ -54,50 +54,53 @@ button {
   i {
     margin-right: 0.4rem;
   }
+  &.disabled {
+    pointer-events: none;
+  }
   &.c-button {
     &-default {
       color: $gray;
-      background-color: #fcfcfc;
-      border: #c7c7c7 1px solid;
-      font-size: 1.4rem;
+      background-color: $ghost-white;
+      border: $silver 1px solid;
+      font-size: $default;
 
       &:hover,
       &:active {
-        background-color: #eaeaea;
+        background-color: $ea-white;
       }
       &.disabled{
-        color: #B3B3B3;
-        background-color: #F4F4F4;
-        border-color: #DEDEDE;
+        color: $sky-gray;
+        background-color: $f4-white;
+        border-color: $de-white;
       }
     }
     &-cta {
-      color: #fff;
-      background-color: #F87826;
+      color: $white;
+      background-color: $yellow-orange;
 
       &:hover,
       &:active {
-        background-color: #D8661E;
+        background-color: $yellow-red;
       }
       &.disabled{
-        background-color: #EDBB9B;
+        background-color: $pale-orange;
       }
     }
     &-primary {
-      color: #F08B4B;
-      background-color: #fff;
-      border: solid 1px #F08B4B;
+      color: $marigold;
+      background-color: $white;
+      border: solid 1px $marigold;
 
       &:hover,
       &:active {
-        background-color: #F7F7F7;
-        color: #DB7B00;
-        border-color: #DB7B00;
+        background-color: $f7-white;
+        color: $mandarin-orange;
+        border-color: $mandarin-orange;
       }
       &.disabled{
-        background-color: #FCFCFC;
-        color: #F1CEA0;
-        border-color: #F1CEA0;
+        background-color: $ghost-white;
+        color: $flesh;
+        border-color: $flesh;
       }
     }
   }
