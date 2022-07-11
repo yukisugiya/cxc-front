@@ -29,7 +29,6 @@ const props = defineProps({
 @import "./src/assets/scss/global";
 label {
   font-size: $large;
-  color: $dark-gray;
   letter-spacing: 0.94px;
   font-weight: $regular;
   position: relative;
