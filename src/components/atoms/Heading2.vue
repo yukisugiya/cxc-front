@@ -5,7 +5,7 @@
 <script lang="ts" setup>
 import { defineProps } from 'vue';
 
-const props = defineProps({
+defineProps({
   headingText: { //表示するテキスト
 		type: String, 
 		required: true
@@ -14,10 +14,11 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
+@import "./src/assets/scss/global";
 h2 {
-  font-size: 2rem;
-  font-weight: 500;
+  font-size: $x-large;
+  font-weight: $medium;
   letter-spacing: 1.2px;
-  color: #484848;
+  color: $dark-gray;
 }
 </style>
