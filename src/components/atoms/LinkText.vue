@@ -1,5 +1,5 @@
 <template>
-  <button>
+  <button type="button">
     <i :class="iconName"></i>
     {{ text }}
   </button>
@@ -23,12 +23,13 @@ const iconName = "fas fa-" + props.icon;
 </script>
 
 <style lang="scss" scoped>
+@import "./src/assets/scss/global";
 button {
-  color: #6e6e6e;
-  font-size: 1.4rem;
-  font-weight: 500;
+  color: $gray;
+  font-size: $default;
+  font-weight: $medium;
   letter-spacing: 0.84px;
-  border-bottom: #6e6e6e solid 1px;
+  border-bottom: $gray solid 1px;
   padding-bottom: 1px;
   position: relative;
   margin-left: 1.5rem;
@@ -43,7 +44,7 @@ button {
     transform: translateY(-50%);
   }
   &:hover {
-    color: #484848;
+    color: $base;
   }
 }
 </style>
