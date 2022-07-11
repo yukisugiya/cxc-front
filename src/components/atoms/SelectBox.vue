@@ -6,6 +6,7 @@
         v-for="option in options"
         :key="option.name"
         :value="option.name"
+        :hidden="option.hidden"
       >
         {{ option.name }}
       </option>
@@ -23,6 +24,9 @@ defineProps({
     name: {
       type: String,
       required: true,
+    },
+    hidden: {
+      type: Boolean,
     }
   }
 });

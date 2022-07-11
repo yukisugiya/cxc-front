@@ -1,6 +1,6 @@
 <template>
 <TextLabel text="入社" type="green"/>
-<SelectBox :options="[{name: 'n'},{name: 'kk'}]"/>
+<SelectBox :options="[{name: 'n', hidden: true},{name: 'kk'}]"/>
 </template>
 
 <script lang="ts" setup>
