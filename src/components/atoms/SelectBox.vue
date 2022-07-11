@@ -5,8 +5,7 @@
       <option
         v-for="option in options"
         :key="option.name"
-        :value="option.value"
-        :hidden="option.hidden"
+        :value="option.name"
       >
         {{ option.name }}
       </option>
@@ -15,23 +14,15 @@
 </template>
 
 <script lang="ts" setup>
-import { defineProps, computed } from "vue";
+import { defineProps } from "vue";
 
-const props = defineProps({
-  //セレクトボックスのオプション
+defineProps({
   options: {
     type: Array,
     required: true,
     name: {
       type: String,
-      required: true
-    },
-    value: {
-    type: String,
-    required: true
-    },
-    hidden: {
-      type: Boolean,
+      required: true,
     }
   }
 });

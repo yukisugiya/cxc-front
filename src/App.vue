@@ -1,9 +1,6 @@
 <template>
 <TextLabel text="入社" type="green"/>
-<SelectBox :options="[
-        {name: 'kkkllllllllllllllllllllllllllllk', value: '@gmail.com', hidden: true},
-        {name: 'yahoo.co.jp', value: '@yahoo.co.jp'}
-    ]"/>
+<SelectBox :options="[{name: 'n'},{name: 'kk'}]"/>
 </template>
 
 <script lang="ts" setup>
