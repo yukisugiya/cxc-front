@@ -1,7 +1,6 @@
 <template>
   <button :class="className" :type="type">
-  <i :class="iconName"></i>
-  {{ text }}
+  <i :class="iconName"></i>{{ text }}
   </button>
 </template>
 
@@ -40,20 +39,24 @@ const iconName = 'fas fa-' + props.icon;
 </script>
 
 <style lang="scss" scoped>
+@import "./src/assets/scss/global";
 button {
-  font-size: 1.6rem;
+  font-size: $large;
   letter-spacing: 0.96px;
   border-radius: 4px;
   line-height: 3.6rem;
   text-align: center;
   box-sizing: border-box;
-  font-weight: 500;
+  font-weight: $medium;
   transition: 0.2s;
   cursor: pointer;
-
+  
+  i {
+    margin-right: 0.4rem;
+  }
   &.c-button {
     &-default {
-      color: #6e6e6e;
+      color: $gray;
       background-color: #fcfcfc;
       border: #c7c7c7 1px solid;
       font-size: 1.4rem;
