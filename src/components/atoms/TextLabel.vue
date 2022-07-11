@@ -42,7 +42,7 @@ const classObject = computed(() => ({
 <style lang="scss" scoped>
 @import "./src/assets/scss/global";
 p {
-  font-size: $medium;
+  font-size: $default;
   height: 3rem;
   display: flex;
   align-items: center;
