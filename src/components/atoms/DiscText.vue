@@ -5,24 +5,26 @@
 <script lang="ts" setup>
 import { defineProps } from "vue";
 
-const props = defineProps({
+defineProps({
   //表示するテキスト
   text: {
     type: String,
     required: true,
-  },
+  }
 });
 </script>
 
 <style lang="scss" scoped>
+@import "./src/assets/scss/global";
 p {
   font-size: 1.3rem;
-  font-weight: 400;
+  font-weight: $regular;
   letter-spacing: 0.78px;
-  color: #929292;
+  color: $gray-92;
   position: relative;
   padding-left: 1rem;
   transition: 0.2s;
+  display: inline-block;
   cursor: pointer;
 
   &::before {
@@ -30,7 +32,7 @@ p {
     height: 6px;
     width: 6px;
     border-radius: 50%;
-    background-color: #929292;
+    background-color: $gray-92;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -38,10 +40,10 @@ p {
   }
   &:hover,
   &.active {
-    color: #3b3c3c;
+    color: $navy;
 
     &::before {
-      background-color: #3b3c3c;
+      background-color: $navy;
     }
   }
 }
