@@ -1,7 +1,6 @@
 <template>
   <button type="button">
-    <i :class="iconName"></i>
-    {{ text }}
+    <i :class="iconName"></i><span>{{ text }}</span>
   </button>
 </template>
 
@@ -26,22 +25,19 @@ const iconName = "fas fa-" + props.icon;
 @import "./src/assets/scss/global";
 button {
   color: $gray;
-  font-size: $default;
-  font-weight: $medium;
-  letter-spacing: 0.84px;
-  border-bottom: $gray solid 1px;
-  padding-bottom: 1px;
-  position: relative;
-  margin-left: 1.5rem;
   cursor: pointer;
   transition: 0.2s;
 
   i {
-    position: absolute;
-    font-size: 1.1rem;
-    left: -1.5rem;
-    top: 50%;
-    transform: translateY(-50%);
+    font-size: $x-small;
+    margin-right: 0.5rem;
+  }
+  span{
+    font-size: $default;
+    font-weight: $medium;
+    letter-spacing: 0.84px;
+    border-bottom: $gray solid 1px;
+    padding-bottom: 1px;
   }
   &:hover {
     color: $base;
