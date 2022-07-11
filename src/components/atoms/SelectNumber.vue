@@ -17,7 +17,7 @@
 <script lang="ts" setup>
 import { defineProps } from "vue";
 
-const props = defineProps({
+defineProps({
   //数字の間隔
   step: {
     type: Number,
@@ -52,15 +52,16 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
+@import "./src/assets/scss/global";
 div {
-  font-size: 1.4em;
+  font-size: $default;
   letter-spacing: 0.84px;
-  color: #6e6e6e;
-  font-weight: 400;
+  color: $gray;
+  font-weight: $regular;
 
   label {
     border-radius: 4px;
-    border: #6e6e6e 1px solid;
+    border: $gray 1px solid;
     display: inline-block;
     position: relative;
 
@@ -72,7 +73,7 @@ div {
       height: 0;
       border-left: 5px solid transparent;
       border-right: 5px solid transparent;
-      border-bottom: 5px solid #6e6e6e;
+      border-bottom: 5px solid $gray;
       right: 1rem;
     }
     &::before {
