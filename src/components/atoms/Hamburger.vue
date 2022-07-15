@@ -1,25 +1,29 @@
 <template>
-  <button type="button">
+  <button type="button" @click='toggleActive' :class="{'active': isActive}">
     <i class="fas fa-bars"></i>
   </button>
 </template>
 
 <script lang="ts" setup>
-import { defineProps } from "vue";
+import { ref } from "vue";
 
-const props = defineProps({});
+const isActive = ref(false);
+const toggleActive = () =>{
+  isActive.value = !isActive.value ;
+}
 </script>
 
 <style lang="scss" scoped>
+@import "./src/assets/scss/global";
 button {
+  transition: 0.3s;
+
   i {
     font-size: 1.6rem;
-    color: #484848;
-    transition: 0.2s;
-
-    &:hover {
-      opacity: 0.5;
-    }
+    color: $base;
+  }
+  &.active{
+    transform: rotate(180deg);
   }
 }
 </style>
