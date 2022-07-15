@@ -71,16 +71,16 @@ div {
       position: absolute;
       width: 0;
       height: 0;
-      border-left: 5px solid transparent;
-      border-right: 5px solid transparent;
-      border-bottom: 5px solid $gray;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-bottom: 6px solid $gray;
       right: 1rem;
     }
     &::before {
-      top: 8px;
+      top: 7px;
     }
     &::after {
-      bottom: 8px;
+      bottom: 7px;
       transform: rotate(180deg);
     }
     input[type="number"] {
@@ -90,9 +90,10 @@ div {
       &::-webkit-inner-spin-button,
       &::-webkit-outer-spin-button {
         opacity: 0;
-        transform: translateX(2px) scale(1.2);
+        transform: translateX(2px) scale(1.3);
         position: relative;
         z-index: 40;
+        cursor: pointer;
       }
     }
   }
