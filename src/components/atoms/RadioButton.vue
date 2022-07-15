@@ -9,7 +9,7 @@
 <script lang="ts" setup>
 import { defineProps } from "vue";
 
-const props = defineProps({
+defineProps({
   //ラベルに表示するテキスト
   label: {
     type: String,

@@ -5,6 +5,5 @@
 </template>
 
 <script lang="ts" setup>
-import TextLabel from './components/atoms/TextLabel.vue';
 import RadioButton from './components/atoms/RadioButton.vue';
 </script>

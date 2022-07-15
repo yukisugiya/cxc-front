@@ -1,5 +1,5 @@
 <template>
-  <p><em :class="classObject">{{ num }}</em>件</p>
+  <p><em :class="className">{{ num }}</em>{{ text }}</p>
 </template>
 
 <script lang="ts" setup>
@@ -10,28 +10,33 @@ const props = defineProps({
   num: {
     type: Number,
     required: true
+  },
+  text: {
+    type: String,
+    required: true
   }
 })
 //numが0以上の時に色が変わる処理
-const classObject = computed(() => props.num > 0 ? 'active' : '')
+const className = computed(() => props.num > 0 ? 'active' : '')
 
 </script>
 
 <style lang="scss" scoped>
+@import "./src/assets/scss/global";
 p {
-  font-size: 1.2rem;
-  color: #6E6E6E;
+  font-size: $small;
+  color: $gray;
   letter-spacing: 0.72px;
-  font-weight: 400;
+  font-weight: $regular;
 }
 em {
   font-size: 3rem;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
+  font-family: $mont;
+  font-weight: $semi-bold;
   margin-right: 0.2rem;
-  color: #E2E2E2;
+  color: $off-white;
   &.active{
-    color: #3B3C3C;
+    color: $navy;
   }
 }
 </style>
