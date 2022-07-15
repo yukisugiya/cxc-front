@@ -5,7 +5,7 @@
 <script lang="ts" setup>
 import { defineProps } from 'vue';
 
-const props = defineProps({
+defineProps({
   headingText: { //表示するテキスト
 		type: String, 
 		required: true
