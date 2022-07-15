@@ -1,9 +1,9 @@
 <template>
-<TextLabel text="入社" type="green"/>
-<Button text="削除" color="default" type="submit" icon="times"/>
+<ButtonBasic text="削除" color="cta" type="submit" icon="times" disabled="false" @event="aaaa"/>
 </template>
 
 <script lang="ts" setup>
-import TextLabel from './components/atoms/TextLabel.vue';
-import Button from './components/atoms/Button.vue';
+import ButtonBasic from './components/atoms/ButtonBasic.vue';
+
+const aaaa = () => {alert('hello')}
 </script>

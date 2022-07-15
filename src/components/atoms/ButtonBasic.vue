@@ -1,6 +1,6 @@
 <template>
-  <button :class="className" :type="type">
-  <i :class="iconName"></i>{{ text }}
+  <button :class="className" :type="type" @click="$emit('event')">
+  <i :class="iconName" v-if="iconShow"></i>{{ text }}
   </button>
 </template>
 
@@ -26,6 +26,10 @@ const props = defineProps({
   //ボタンのアイコン
   icon: {
     type: String,
+  },
+  disabled: {
+    type: Boolean,
+    default: false
   }
 });
 
@@ -33,9 +37,12 @@ const className = computed(() => ({
   "c-button-default": props.color == "default",
   "c-button-cta": props.color == "cta",
   "c-button-primary": props.color == "primary",
+  "disabled": props.disabled == "true",
 }));
+//iconの値が空だった場合の処理
+const iconShow = computed(() => props.icon != '' );
 
-const iconName = 'fas fa-' + props.icon;
+const iconName = computed(() => "fas fa-" + props.icon );
 </script>
 
 <style lang="scss" scoped>
@@ -50,6 +57,7 @@ button {
   font-weight: $medium;
   transition: 0.2s;
   cursor: pointer;
+  padding: 0 1rem;
   
   i {
     margin-right: 0.4rem;
