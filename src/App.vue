@@ -1,9 +1,7 @@
 <template>
-<TextLabel text="入社" type="green"/>
-<DiscText text="分析結果"/>
+<DiscText text="分析結果" url="https://trello.com/b/gNa2mRxp/cxc"/>
 </template>
 
 <script lang="ts" setup>
-import TextLabel from './components/atoms/TextLabel.vue';
 import DiscText from './components/atoms/DiscText.vue';
 </script>

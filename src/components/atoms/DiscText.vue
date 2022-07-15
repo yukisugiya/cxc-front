@@ -1,5 +1,5 @@
 <template>
-  <p>{{ text }}</p>
+  <a :href="url">{{ text }}</a>
 </template>
 
 <script lang="ts" setup>
@@ -10,13 +10,17 @@ defineProps({
   text: {
     type: String,
     required: true,
+  },
+  url: {
+    type: String,
+    required: true,
   }
 });
 </script>
 
 <style lang="scss" scoped>
 @import "./src/assets/scss/global";
-p {
+a {
   font-size: 1.3rem;
   font-weight: $regular;
   letter-spacing: 0.78px;
