@@ -39,6 +39,7 @@ label {
   position: relative;
   display: inline-block;
   background-color: $light-gray;
+  border-radius: 4px;
 
   i {
     position: absolute;
@@ -49,8 +50,7 @@ label {
     z-index: 0;
   }
   select {
-    height: 3.6rem;
-    border-radius: 4px;
+    line-height: 3.6rem;
     padding: 0 4rem 0 2rem;
     font-size: $default;
     letter-spacing: 0.84px;
