@@ -19,6 +19,6 @@ h2 {
   font-size: $x-large;
   font-weight: $medium;
   letter-spacing: 1.2px;
-  color: $dark-gray;
+  color: $base;
 }
 </style>
