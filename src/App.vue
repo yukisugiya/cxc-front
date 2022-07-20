@@ -1,8 +1,10 @@
 <template>
-<ListIcon icon="file-alt" text="アンケート" :arrow="true"/>
-<ListIcon icon="comment-dots" text="匿名質問一覧"/>
+<ListIconLink icon="file-alt" text="アンケート" :arrow="true" @list-click="aaa" />
+<ListIconLink icon="comment-dots" text="匿名質問一覧" url="http://eishin-develop.sakura.ne.jp/cxc/index.html"/>
 </template>
 
 <script lang="ts" setup>
-import ListIcon from './components/atoms/ListIcon.vue';
+import ListIconLink from './components/atoms/ListIconLink.vue';
+
+const aaa = () => { console.log(9) }
 </script>

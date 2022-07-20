@@ -1,13 +1,13 @@
 <template>
-  <a>
+  <a :href="url" @click="toggleActive" :class="{ active: isActive }">
     <i :class="iconName"></i>
-    {{ text }}
-    <i :class="arrowClass"  v-if="arrowShow"></i>
+    <span>{{ text }}</span>
+    <i :class="arrowClass" v-if="props.arrow"></i>
   </a>
 </template>
 
 <script lang="ts" setup>
-import { defineProps, computed } from "vue";
+import { defineProps, computed, defineEmits, ref } from "vue";
 
 const props = defineProps({
   //リストに表示するテキスト
@@ -20,17 +20,31 @@ const props = defineProps({
     type: String,
     required: true,
   },
+  //リンク紐付け
+  url: {
+    type: String,
+  },
   //矢印の表示
   arrow: {
     type: Boolean,
-    default: false
-  }
+    default: false,
+  },
 });
-//矢印の表示処理
-const arrowClass = computed(() => props.arrow == true ? 'arrow fas fa-chevron-right' : '' )
-const arrowShow = computed(() => props.arrow != '' );
 
-const iconName = computed(() => "icon far fa-" + props.icon );
+const emit = defineEmits(["list-click"]);
+
+const isActive = ref(false);
+
+const toggleActive = () => {
+  emit("list-click");
+  //クリックした時の処理
+  isActive.value = !isActive.value;
+};
+
+//矢印の表示処理
+const arrowClass = computed(() => props.arrow == true ? "fas fa-chevron-right arrow" : "" );
+
+const iconName = computed(() => "icon far fa-" + props.icon);
 </script>
 
 <style lang="scss" scoped>
