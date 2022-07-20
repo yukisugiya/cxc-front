@@ -1,5 +1,5 @@
 <template>
-  <button type="button" @click="$emit('toggleActive')">
+  <button type="button" @click="$emit('Hamburger-event')">
     <i
       @click="toggleActive"
       class="fas fa-bars"

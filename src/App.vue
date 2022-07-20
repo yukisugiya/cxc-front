@@ -1,5 +1,5 @@
 <template>
-<Hamburger @toggleActive="aa" />
+<Hamburger @Hamburger-event="aa" />
 </template>
 
 <script lang="ts" setup>
