@@ -1,18 +1,18 @@
 <template>
-  <button type="button" @click="$emit('Hamburger-event')">
-    <i
-      @click="toggleActive"
-      class="fas fa-bars"
-      :class="{ active: isActive }"
-    ></i>
+  <button type="button" @click="toggleActive" :class="{ active: isActive }" >
+    <i class="fas fa-bars"></i>
   </button>
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue";
+import { ref, defineEmits } from "vue";
+
+const emit = defineEmits(["Hamburger-event"]);
 
 const isActive = ref(false);
+
 const toggleActive = () => {
+  emit("Hamburger-event");
   isActive.value = !isActive.value;
 };
 </script>
@@ -24,10 +24,9 @@ button {
     font-size: 1.6rem;
     color: $base;
     transition: 0.3s;
-    
-    &.active {
-      transform: rotate(180deg);
-    }
+  }
+  &.active i{
+    transform: rotate(180deg);
   }
 }
 </style>
