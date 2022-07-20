@@ -1,10 +1,8 @@
 <template>
-<div>
-  <i :class="iconName"></i>
   <a :href="url">
+    <i :class="iconName"></i>
     <span>{{ text }}</span>
   </a>
-</div>
 </template>
 
 <script lang="ts" setup>
@@ -21,35 +19,36 @@ const props = defineProps({
   },
   url: {
     type: String,
-    required: true
-  }
+    required: true,
+  },
 });
 
-const iconName = computed(() => "fas fa-" + props.icon )
+const iconName = computed(() => "fas fa-" + props.icon);
 </script>
 
 <style lang="scss" scoped>
 @import "./src/assets/scss/global";
 
-div {
+a {
+  color: $gray;
+  cursor: pointer;
+  transition: 0.2s;
+  display: inline-block;
+  
   i {
     font-size: $x-small;
     margin-right: 0.5rem;
   }
-  a {
-    color: $gray;
-    cursor: pointer;
-    transition: 0.2s;
-    span{
-      font-size: $default;
-      font-weight: $medium;
-      letter-spacing: 0.84px;
-      border-bottom: $gray solid 1px;
-      padding-bottom: 1px;
-    }
-    &:hover {
-      color: $base;
-    }
+  span {
+    font-size: $default;
+    font-weight: $medium;
+    letter-spacing: 0.84px;
+    border-bottom: $gray solid 1px;
+    padding-bottom: 1px;
+    display: inline-block;
+  }
+  &:hover {
+    color: $base;
   }
 }
 </style>
