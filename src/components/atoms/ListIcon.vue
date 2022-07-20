@@ -1,9 +1,9 @@
 <template>
-  <button type="button">
+  <a>
     <i :class="iconName"></i>
     {{ text }}
-    <i :class="arrowClass"></i>
-  </button>
+    <i :class="arrowClass"  v-if="arrowShow"></i>
+  </a>
 </template>
 
 <script lang="ts" setup>
@@ -26,19 +26,21 @@ const props = defineProps({
     default: false
   }
 });
-//矢印の表示がtrueの場合の処理
+//矢印の表示処理
 const arrowClass = computed(() => props.arrow == true ? 'arrow fas fa-chevron-right' : '' )
+const arrowShow = computed(() => props.arrow != '' );
 
-const iconName = "icon far fa-" + props.icon;
+const iconName = computed(() => "icon far fa-" + props.icon );
 </script>
 
 <style lang="scss" scoped>
-button {
+a {
   font-size: 1.4rem;
   color: #929292;
   transition: 0.2s;
   line-height: 4.2rem;
   position: relative;
+  display: inline-block;
   width: 100%;
   box-sizing: border-box;
   padding-left: 4rem;
