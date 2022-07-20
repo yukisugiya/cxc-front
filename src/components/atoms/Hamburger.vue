@@ -1,6 +1,10 @@
 <template>
-  <button type="button" @click='toggleActive' :class="{'active': isActive}">
-    <i class="fas fa-bars"></i>
+  <button type="button" @click="$emit('toggleActive')">
+    <i
+      @click="toggleActive"
+      class="fas fa-bars"
+      :class="{ active: isActive }"
+    ></i>
   </button>
 </template>
 
@@ -8,22 +12,22 @@
 import { ref } from "vue";
 
 const isActive = ref(false);
-const toggleActive = () =>{
-  isActive.value = !isActive.value ;
-}
+const toggleActive = () => {
+  isActive.value = !isActive.value;
+};
 </script>
 
 <style lang="scss" scoped>
 @import "./src/assets/scss/global";
 button {
-  transition: 0.3s;
-
   i {
     font-size: 1.6rem;
     color: $base;
-  }
-  &.active{
-    transform: rotate(180deg);
+    transition: 0.3s;
+    
+    &.active {
+      transform: rotate(180deg);
+    }
   }
 }
 </style>

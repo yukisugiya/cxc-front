@@ -1,9 +1,10 @@
 <template>
-<TextLabel text="入社" type="green"/>
-<Hamburger />
+<Hamburger @toggleActive="aa" />
 </template>
 
 <script lang="ts" setup>
-import TextLabel from './components/atoms/TextLabel.vue';
 import Hamburger from './components/atoms/Hamburger.vue';
+const aa = () => {
+    console.log(9)
+}
 </script>
