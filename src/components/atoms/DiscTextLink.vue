@@ -13,7 +13,6 @@ defineProps({
   },
   url: {
     type: String,
-    required: true,
   }
 });
 </script>
