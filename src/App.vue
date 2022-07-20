@@ -1,5 +1,5 @@
 <template>
-<ButtonBasic text="削除" color="cta" type="submit" icon="times" disabled="false" @event="aaaa"/>
+<ButtonBasic text="削除" color="cta" type="submit" icon="times" :disabled="false" @click-event="aaaa"/>
 </template>
 
 <script lang="ts" setup>
