@@ -41,7 +41,6 @@ defineProps({
   //inputのネーム属性
   name: {
     type: String,
-    required: true,
   },
   //表示されるテキスト
   text: {
