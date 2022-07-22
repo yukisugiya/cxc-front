@@ -47,7 +47,7 @@ p {
   display: flex;
   align-items: center;
   padding: 0 1.2rem;
-  letter-spacing: 0.84px;
+  letter-spacing: $default-spacing;
   border-radius: 1.5rem;
   width: fit-content;
   font-weight: $regular;

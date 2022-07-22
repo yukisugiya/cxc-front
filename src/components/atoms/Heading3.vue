@@ -18,7 +18,7 @@ defineProps({
 h3 {
   font-size: $large;
   font-weight: $medium;
-  letter-spacing:0.96px;
+  letter-spacing: $wide-spacing;
   color: $gray;
 }
 </style>

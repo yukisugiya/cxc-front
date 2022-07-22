@@ -54,7 +54,7 @@ defineProps({
 @import "./src/assets/scss/global";
 div {
   font-size: $default;
-  letter-spacing: 0.84px;
+  letter-spacing: $default-spacing;
   color: $gray;
   font-weight: $regular;
 
