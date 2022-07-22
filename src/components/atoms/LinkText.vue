@@ -42,7 +42,7 @@ a {
   span {
     font-size: $default;
     font-weight: $medium;
-    letter-spacing: 0.84px;
+    letter-spacing: $default-spacing;
     border-bottom: $gray solid 1px;
     padding-bottom: 1px;
     display: inline-block;

@@ -47,7 +47,7 @@ const iconName = computed(() => "fas fa-" + props.icon );
 @import "./src/assets/scss/global";
 button {
   font-size: $large;
-  letter-spacing: 0.96px;
+  letter-spacing: $wide-spacing;
   border-radius: 4px;
   line-height: 3.6rem;
   text-align: center;
