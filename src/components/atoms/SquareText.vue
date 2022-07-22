@@ -1,8 +1,8 @@
 <template>
   <p>
-    <span v-if="(square == true)">■</span>
+    <span v-if="square == true">■</span>
     {{ text }}
-    <span v-if="(required == true)" class="required">*</span>
+    <span v-if="required == true" class="required">*</span>
   </p>
 </template>
 
@@ -10,14 +10,17 @@
 import { defineProps } from "vue";
 
 defineProps({
+  //表示するテキスト
   text: {
     type: String,
     required: true,
   },
+  //四角の表示
   square: {
     type: Boolean,
     default: true
   },
+  //アスタリスクの表示
   required: {
     type: Boolean,
     default: true
