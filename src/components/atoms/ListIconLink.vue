@@ -42,15 +42,18 @@ const toggleActive = () => {
 };
 
 //矢印の表示処理
-const arrowClass = computed(() => props.arrow == true ? "fas fa-chevron-right arrow" : "" );
+const arrowClass = computed(() =>
+  props.arrow == true ? "fas fa-chevron-right arrow" : ""
+);
 
 const iconName = computed(() => "icon far fa-" + props.icon);
 </script>
 
 <style lang="scss" scoped>
+@import "./src/assets/scss/global";
 a {
-  font-size: 1.4rem;
-  color: #929292;
+  font-size: $default;
+  color: $gray-92;
   transition: 0.2s;
   line-height: 4.2rem;
   position: relative;
@@ -60,19 +63,19 @@ a {
   padding-left: 4rem;
   border-radius: 0 2.1rem 2.1rem 0;
   cursor: pointer;
-  font-weight: 400;
-  letter-spacing: 0.84px;
+  font-weight: $regular;
+  letter-spacing: $default-spacing;
 
   &:hover,
   &.active {
-    color: #3b3c3c;
-    background-color: #f8f8f8;
+    color: $navy;
+    background-color: $light-gray;
   }
   &.active i.arrow {
     transform: translateY(-50%) rotate(90deg);
   }
   i.icon {
-    font-size: 1.6rem;
+    font-size: $large;
     margin-right: 1rem;
   }
   i.arrow {

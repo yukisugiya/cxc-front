@@ -53,7 +53,7 @@ label {
     line-height: 3.6rem;
     padding: 0 4rem 0 2rem;
     font-size: $default;
-    letter-spacing: 0.84px;
+    letter-spacing: $default-spacing;
     color: $gray;
     position: relative;
     z-index: 10;

@@ -1,0 +1,104 @@
+<template>
+  <div>
+    <label>
+      <input
+        type="number"
+        :min="min"
+        :max="max"
+        :step="step"
+        :name="name"
+        :value="value"
+      />
+    </label>
+    <p>{{ text }}</p>
+  </div>
+</template>
+
+<script lang="ts" setup>
+import { defineProps } from "vue";
+
+defineProps({
+  //数字の間隔
+  step: {
+    type: Number,
+    default: 10,
+  },
+  //数字の最小
+  min: {
+    type: Number,
+    default: 10,
+  },
+  //数字の最大
+  max: {
+    type: Number,
+    default: 50,
+  },
+  //数字の規定値
+  value: {
+    type: Number,
+    default: 10,
+  },
+  //inputのネーム属性
+  name: {
+    type: String,
+  },
+  //表示されるテキスト
+  text: {
+    type: String,
+    required: true,
+  },
+});
+</script>
+
+<style lang="scss" scoped>
+@import "./src/assets/scss/global";
+div {
+  font-size: $default;
+  letter-spacing: $default-spacing;
+  color: $gray;
+  font-weight: $regular;
+
+  label {
+    border-radius: 4px;
+    border: $gray 1px solid;
+    display: inline-block;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-bottom: 6px solid $gray;
+      right: 1rem;
+    }
+    &::before {
+      top: 7px;
+    }
+    &::after {
+      bottom: 7px;
+      transform: rotate(180deg);
+    }
+    input[type="number"] {
+      height: 3rem;
+      padding: 0 1rem;
+
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button {
+        opacity: 0;
+        transform: translateX(2px) scale(1.3);
+        position: relative;
+        z-index: 40;
+        cursor: pointer;
+      }
+    }
+  }
+  p {
+    display: inline-block;
+    margin-left: 1rem;
+  }
+}
+</style>

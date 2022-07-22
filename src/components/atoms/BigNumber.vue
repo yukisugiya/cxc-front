@@ -26,7 +26,7 @@ const className = computed(() => props.num > 0 ? 'active' : '')
 p {
   font-size: $small;
   color: $gray;
-  letter-spacing: 0.72px;
+  letter-spacing: $narrow-spacing;
   font-weight: $regular;
 }
 em {
