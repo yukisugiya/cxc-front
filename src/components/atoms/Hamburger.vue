@@ -21,7 +21,7 @@ const toggleActive = () => {
 @import "./src/assets/scss/global";
 button {
   i {
-    font-size: 1.6rem;
+    font-size: $large;
     color: $base;
     transition: 0.3s;
   }
