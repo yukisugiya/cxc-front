@@ -1,9 +1,13 @@
 <template>
-  <a :href="url" @click="toggleActive" :class="{ active: isActive }">
+  <a v-if="url" :href="url" :class="classObject">
     <i :class="iconName"></i>
     <span>{{ text }}</span>
-    <i :class="arrowClass" v-if="props.arrow"></i>
   </a>
+  <p v-else @click="toggleActive" :class="classObject">
+    <i :class="iconName"></i>
+    <span>{{ text }}</span>
+    <i class="fas fa-chevron-right arrow"></i>
+  </p>
 </template>
 
 <script lang="ts" setup>
@@ -18,14 +22,13 @@ const props = defineProps({
   //リストに表示するアイコン
   icon: {
     type: String,
-    required: true,
+    default: "file-alt",
   },
   //リンク紐付け
   url: {
     type: String,
   },
-  //矢印の表示
-  arrow: {
+  mini: {
     type: Boolean,
     default: false,
   },
@@ -41,23 +44,25 @@ const toggleActive = () => {
   isActive.value = !isActive.value;
 };
 
-//矢印の表示処理
-const arrowClass = computed(() =>
-  props.arrow == true ? "fas fa-chevron-right arrow" : ""
-);
+const classObject = computed(() => ({
+  mini: props.mini == true,
+  active: isActive.value == true,
+}));
 
 const iconName = computed(() => "icon far fa-" + props.icon);
 </script>
 
 <style lang="scss" scoped>
 @import "./src/assets/scss/global";
-a {
+a,
+p {
   font-size: $default;
   color: $gray-92;
   transition: 0.2s;
   line-height: 4.2rem;
   position: relative;
   display: inline-block;
+  max-width: 24rem;
   width: 100%;
   box-sizing: border-box;
   padding-left: 4rem;
@@ -65,6 +70,7 @@ a {
   cursor: pointer;
   font-weight: $regular;
   letter-spacing: $default-spacing;
+  background-color: $white;
 
   &:hover,
   &.active {
@@ -74,17 +80,58 @@ a {
   &.active i.arrow {
     transform: translateY(-50%) rotate(90deg);
   }
-  i.icon {
-    font-size: $large;
-    margin-right: 1rem;
+  i {
+    &.icon {
+      font-size: $large;
+      margin-right: 1rem;
+    }
+    &.arrow {
+      font-size: 6px;
+      position: absolute;
+      top: 55%;
+      transform: translateY(-55%);
+      right: 2rem;
+      transition: 0.2s;
+    }
   }
-  i.arrow {
-    font-size: 6px;
-    position: absolute;
-    top: 55%;
-    transform: translateY(-55%);
-    right: 2rem;
-    transition: 0.2s;
+  &.mini {
+    padding-left: 0;
+    text-align: center;
+    width: fit-content;
+    display: block;
+    border-radius: 0;
+    width: 9rem;
+
+    &::before {
+      content: "";
+      height: 100%;
+      width: 3px;
+      background-color: $navy;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: 0.2s;
+    }
+    &:hover,
+    &.active {
+      color: $navy;
+      background-color: $white;
+
+      &::before {
+        opacity: 1;
+      }
+    }
+    i {
+      margin-right: 0;
+
+      &.arrow {
+        display: none;
+      }
+    }
+    span {
+      display: none;
+    }
   }
 }
 </style>
