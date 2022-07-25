@@ -18,12 +18,12 @@ defineProps({
   //四角の表示
   square: {
     type: Boolean,
-    default: true
+    default: false
   },
   //アスタリスクの表示
   required: {
     type: Boolean,
-    default: true
+    default: false
   }
 });
 </script>

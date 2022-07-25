@@ -1,7 +1,7 @@
 <template>
-  <SquareText text="キャッチコピー"/>
+  <ItemName text="キャッチコピー"/>
 </template>
 
 <script lang="ts" setup>
-  import SquareText from './components/atoms/SquareText.vue';
+  import ItemName from './components/atoms/ItemName.vue';
 </script>
