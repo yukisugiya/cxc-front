@@ -1,5 +1,5 @@
 <template>
-  <a :href="url" @mouseover="mousemove" @mouseout="mousemove">
+  <a :href="url" @mouseover="activeToggle" @mouseout="activeToggle">
     <i :class="iconName"></i>
     <p v-if="isActive == true">{{ tipText }}</p>
   </a>
@@ -30,7 +30,7 @@ const iconName = computed(() => "fas fa-" + props.icon);
 
 const isActive = ref(false);
 
-const mousemove = () => {
+const activeToggle = () => {
   isActive.value = !isActive.value;
 };
 </script>
