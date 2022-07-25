@@ -28,27 +28,36 @@ const props = defineProps({
   url: {
     type: String,
   },
-  mini: {
-    type: Boolean,
-    default: false,
+  //リストのサイズ
+  size: {
+    type: String,
+    required: false,
+    default: "md",
+    validator: function (value) {
+      return ["sm", "md"].indexOf(value) !== -1;
+    },
   },
 });
 
+//クリックした時のイベント
 const emit = defineEmits(["list-click"]);
 
+//矢印のリストがActive
 const isActive = ref(false);
 
+//矢印のリストをクリックした時の処理
 const toggleActive = () => {
   emit("list-click");
-  //クリックした時の処理
   isActive.value = !isActive.value;
 };
 
+//リストに付与されるクラス
 const classObject = computed(() => ({
-  mini: props.mini == true,
+  mini: props.size == 'sm',
   active: isActive.value == true,
 }));
 
+//リストのアイコン
 const iconName = computed(() => "icon far fa-" + props.icon);
 </script>
 
@@ -88,8 +97,8 @@ p {
     &.arrow {
       font-size: 6px;
       position: absolute;
-      top: 55%;
-      transform: translateY(-55%);
+      top: 50%;
+      transform: translateY(-50%);
       right: 2rem;
       transition: 0.2s;
     }
